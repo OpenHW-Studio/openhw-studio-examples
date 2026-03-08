@@ -4,14 +4,14 @@
     {
       "type": "wokwi-arduino-uno",
       "id": "uno",
-      "top": 0,
-      "left": 0
+      "x":120,
+      "y": 120
     },
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": -24,
-      "left": 356,
+      "x": 545,
+      "y": 75,
       "attrs": {
         "color": "red"
       }
@@ -19,8 +19,8 @@
     {
       "type": "wokwi-resistor",
       "id": "r1",
-      "top": -24,
-      "left": 292,
+      "x": 435,
+      "y": 120,
       "attrs": {
         "value": "220"
       }

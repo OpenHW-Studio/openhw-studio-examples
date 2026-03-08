@@ -6,50 +6,50 @@
     {
       "type": "wokwi-arduino-uno",
       "id": "uno",
-      "top": 0,
-      "left": 0,
+      "x": 120,
+      "y": 120,
       "attrs": {}
     },
     {
       "type": "wokwi-led",
       "id": "ledR",
-      "top": -50,
-      "left": 315,
+      "x": 700,
+      "y": 100,
       "attrs": { "color": "red" }
     },
     {
       "type": "wokwi-led",
       "id": "ledG",
-      "top": 30,
-      "left": 315,
+      "x": 700,
+      "y": 200,
       "attrs": { "color": "green" }
     },
     {
       "type": "wokwi-led",
       "id": "ledB",
-      "top": 110,
-      "left": 315,
+      "x": 700,
+      "y": 315,
       "attrs": { "color": "blue" }
     },
     {
       "type": "wokwi-resistor",
       "id": "rR",
-      "top": 84,
-      "left": 250,
+      "x": 525,
+      "y": 120,
       "attrs": { "value": "220" }
     },
     {
       "type": "wokwi-resistor",
       "id": "rG",
-      "top": 164,
-      "left": 250,
+      "x": 525,
+      "y": 230,
       "attrs": { "value": "220" }
     },
     {
       "type": "wokwi-resistor",
       "id": "rB",
-      "top": 244,
-      "left": 250,
+      "x": 525,
+      "y": 350,
       "attrs": { "value": "220" }
     }
   ],
@@ -61,8 +61,8 @@
     ["uno:9", "rB:p1", "blue"],
     ["rB:p2", "ledB:A", "blue"],
     ["ledR:K", "uno:gnd_1", "black"],
-    ["ledG:K", "uno:gnd_2", "black"],
-    ["ledB:K", "uno:gnd_3", "black"]
+    ["ledG:K", "uno:gnd_1", "black"],
+    ["ledB:K", "uno:gnd_1", "black"]
   ],
   "dependencies": {}
 }
