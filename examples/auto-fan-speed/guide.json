@@ -1,0 +1,10 @@
+{
+  "title": "Automatic Fan Speed Control",
+  "board": "Arduino Uno",
+  "description": "Automatically control fan speed based on temperature using TMP36 sensor.",
+  "objectives": [
+    "Read temperature from TMP36 sensor",
+    "Use PWM to control DC motor speed",
+    "Map temperature range to fan speed"
+  ]
+}
