@@ -1,0 +1,74 @@
+{
+  "title": "IR Remote Control System Evaluation",
+  "description": "Evaluate IR remote based LED control using Arduino.",
+  "version": "2.0",
+  "passingThreshold": 75,
+  "evaluationCriteria": {
+    "codeFunctionality": {
+      "weight": 0.8,
+      "description": "Arduino code that receives IR signals and controls an LED",
+      "requiredFunctions": [
+        "pinMode",
+        "digitalWrite",
+        "IrReceiver.begin",
+        "IrReceiver.decode"
+      ]
+    },
+    "components": {
+      "weight": 0.2,
+      "description": "Required components for the circuit",
+      "required": [
+        {
+          "type": "arduino",
+          "count": 1
+        },
+        {
+          "type": "ir_receiver",
+          "count": 1
+        },
+        {
+          "type": "led",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "demoImages": [
+    {
+      "id": "circuit-layout",
+      "name": "Circuit Layout",
+      "filename": "circuit.png",
+      "description": "Expected component placement and wiring"
+    }
+  ],
+  "scoring": {
+    "codeFunctionality": {
+      "excellent": {
+        "min": 90,
+        "feedback": "IR remote successfully controls the LED."
+      },
+      "good": {
+        "min": 75,
+        "feedback": "Project works with minor issues."
+      },
+      "needsImprovement": {
+        "min": 0,
+        "feedback": "IR signal reception or LED control is not functioning correctly."
+      }
+    },
+    "components": {
+      "excellent": {
+        "min": 90,
+        "feedback": "All required components are connected correctly."
+      },
+      "good": {
+        "min": 75,
+        "feedback": "Most required components are connected."
+      },
+      "needsImprovement": {
+        "min": 0,
+        "feedback": "Missing or incorrect component connections."
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "IR Remote Control System",
+  "board": "Arduino Uno",
+  "description": "Control an LED using commands received from an IR remote through an IR receiver module.",
+  "objectives": [
+    "Understand infrared communication",
+    "Interface an IR receiver with Arduino",
+    "Decode remote control signals",
+    "Control an LED using remote buttons"
+  ]
+}
