@@ -1,6 +1,6 @@
 {
-  "title": "Temperature Sensor Circuit Evaluation",
-  "description": "Automatic evaluation criteria for NTC temperature sensor with buzzer alarm circuit",
+  "title": "DC Motor with Motor Driver (L293D) Circuit Evaluation",
+  "description": "Automatic evaluation criteria for dc motor with motor driver (l293d) circuit implementation",
   "version": "2.0",
   "passingThreshold": 85,
   "evaluationCriteria": {
@@ -10,61 +10,49 @@
       "requiredConnections": [
         {
           "from": {
-            "component": "ntc-temperature-sensor",
-            "terminal": "p1"
+            "component": "arduino",
+            "pin": "9"
           },
           "to": {
-            "component": "arduino",
-            "pin": "5v"
+            "component": "l293d",
+            "terminal": "enable"
           }
         },
         {
           "from": {
-            "component": "ntc-temperature-sensor",
-            "terminal": "p2"
+            "component": "arduino",
+            "pin": "10"
           },
           "to": {
-            "component": "arduino",
-            "pin": "a0"
+            "component": "l293d",
+            "terminal": "in1"
           }
         },
         {
           "from": {
-            "component": "ntc-temperature-sensor",
-            "terminal": "p2"
-          },
-          "to": {
-            "component": "resistor",
-            "terminal": "p1"
-          }
-        },
-        {
-          "from": {
-            "component": "resistor",
-            "terminal": "p2"
-          },
-          "to": {
             "component": "arduino",
-            "pin": "gnd"
+            "pin": "11"
+          },
+          "to": {
+            "component": "l293d",
+            "terminal": "in2"
           }
         }
       ]
     },
     "codeFunctionality": {
       "weight": 0.37,
-      "description": "Arduino code that reads temperature and triggers alarm",
+      "description": "Arduino code that implements required functionality",
       "requiredFunctions": [
-        "analogRead",
+        "pinMode",
         "Serial.begin",
-        "tone",
-        "noTone",
+        "analogWrite",
+        "digitalWrite",
         "delay"
       ],
       "expectedBehavior": {
-        "sensorPin": "A0",
-        "buzzerPin": 8,
-        "threshold": 30.0,
-        "alarm": "buzzer on when temp >= 30C"
+        "pinMode": "OUTPUT/INPUT",
+        "pattern": "DC Motor with Motor Driver (L293D)"
       }
     },
     "components": {
@@ -76,11 +64,11 @@
           "count": 1
         },
         {
-          "type": "ntc-temperature-sensor",
+          "type": "l293d",
           "count": 1
         },
         {
-          "type": "resistor",
+          "type": "dc-motor",
           "count": 1
         }
       ]
@@ -90,14 +78,14 @@
     {
       "id": "circuit-layout",
       "name": "Correct Circuit Layout",
-      "filename": "temperature-sensor-circuit.png",
+      "filename": "dc-motor-l293d-circuit.png",
       "description": "Expected component placement and wiring"
     },
     {
       "id": "simulation-result",
       "name": "Working Simulation",
-      "filename": "temperature-sensor-simulation.png",
-      "description": "Expected simulation output showing temperature reading"
+      "filename": "dc-motor-l293d-simulation.png",
+      "description": "Expected simulation output"
     }
   ],
   "scoring": {
@@ -118,11 +106,11 @@
     "codeFunctionality": {
       "excellent": {
         "min": 90,
-        "feedback": "Code correctly reads temperature and triggers buzzer alarm!"
+        "feedback": "Code works perfectly!"
       },
       "good": {
         "min": 75,
-        "feedback": "Code works but may have minor issues with threshold or buzzer"
+        "feedback": "Code works but may need minor improvements"
       },
       "needsImprovement": {
         "min": 0,

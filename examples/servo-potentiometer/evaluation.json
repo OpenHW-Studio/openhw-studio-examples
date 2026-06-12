@@ -1,57 +1,61 @@
 {
-  "title": "Potentiometer Analog Read Evaluation",
-  "description": "Automatic evaluation criteria for reading potentiometer values using Arduino",
+  "title": "Servo Motor Control using Potentiometer Circuit Evaluation",
+  "description": "Automatic evaluation criteria for servo motor control using potentiometer circuit implementation",
   "version": "2.0",
   "passingThreshold": 85,
   "evaluationCriteria": {
     "wiringAccuracy": {
-      "weight": 0.44,
-      "description": "Correct electrical connections between Arduino and potentiometer",
+      "weight": 0.43,
+      "description": "Correct electrical connections between components",
       "requiredConnections": [
         {
           "from": {
             "component": "arduino",
-            "pin": "5V"
+            "pin": "9"
           },
           "to": {
-            "component": "potentiometer",
-            "terminal": "1"
+            "component": "servo",
+            "terminal": "signal"
           }
         },
         {
           "from": {
             "component": "arduino",
-            "pin": "gnd_1"
+            "pin": "5v"
           },
           "to": {
             "component": "potentiometer",
-            "terminal": "2"
+            "terminal": "vcc"
           }
         },
         {
           "from": {
-            "component": "potentiometer",
-            "terminal": "SIG"
+            "component": "arduino",
+            "pin": "a0"
           },
           "to": {
-            "component": "arduino",
-            "pin": "A0"
+            "component": "potentiometer",
+            "terminal": "wiper"
           }
         }
       ]
     },
     "codeFunctionality": {
-      "weight": 0.36,
-      "description": "Arduino code that reads potentiometer value and prints it to Serial Monitor",
+      "weight": 0.37,
+      "description": "Arduino code that implements required functionality",
       "requiredFunctions": [
-        "analogRead",
+        "pinMode",
         "Serial.begin",
-        "Serial.print",
-        "Serial.println"
+        "Servo",
+        "attach",
+        "write",
+        "analogRead",
+        "map",
+        "delay"
       ],
       "expectedBehavior": {
-        "pinNumber": "A0",
-        "pattern": "analog value printed to serial monitor"
+        "pinMode": "OUTPUT/INPUT",
+        "pattern": "Servo Motor Control using Potentiometer"
       }
     },
     "components": {
@@ -60,6 +64,10 @@
       "required": [
         {
           "type": "arduino",
+          "count": 1
+        },
+        {
+          "type": "servo",
           "count": 1
         },
         {
@@ -72,44 +80,44 @@
   "demoImages": [
     {
       "id": "circuit-layout",
-      "name": "Correct Potentiometer Circuit",
-      "filename": "circuit.png",
-      "description": "Expected wiring between Arduino and potentiometer"
+      "name": "Correct Circuit Layout",
+      "filename": "servo-potentiometer-circuit.png",
+      "description": "Expected component placement and wiring"
     },
     {
       "id": "simulation-result",
-      "name": "Serial Output",
-      "filename": "circuit.png",
-      "description": "Expected simulation output showing analog values changing"
+      "name": "Working Simulation",
+      "filename": "servo-potentiometer-simulation.png",
+      "description": "Expected simulation output"
     }
   ],
   "scoring": {
     "wiringAccuracy": {
       "excellent": {
         "min": 90,
-        "feedback": "Potentiometer wiring is correct!"
+        "feedback": "All connections are correct!"
       },
       "good": {
         "min": 75,
-        "feedback": "Most potentiometer connections are correct"
+        "feedback": "Most connections are correct with minor issues"
       },
       "needsImprovement": {
         "min": 0,
-        "feedback": "Potentiometer wiring needs correction"
+        "feedback": "Wiring needs significant correction"
       }
     },
     "codeFunctionality": {
       "excellent": {
         "min": 90,
-        "feedback": "Code correctly reads and prints potentiometer values!"
+        "feedback": "Code works perfectly!"
       },
       "good": {
         "min": 75,
-        "feedback": "Analog reading works but serial output may need improvement"
+        "feedback": "Code works but may need minor improvements"
       },
       "needsImprovement": {
         "min": 0,
-        "feedback": "Code does not correctly read the potentiometer"
+        "feedback": "Code functionality needs significant work"
       }
     },
     "components": {
