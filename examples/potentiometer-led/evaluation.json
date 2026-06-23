@@ -25,7 +25,7 @@
           },
           "to": {
             "component": "arduino",
-            "pin": "5v"
+            "pin": "3.3v"
           }
         },
         {
