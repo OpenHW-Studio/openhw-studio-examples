@@ -1,6 +1,6 @@
 {
-  "title": "DC Motor with Motor Driver (L293D) Circuit Evaluation",
-  "description": "Automatic evaluation criteria for dc motor with motor driver (l293d) circuit implementation",
+  "title": "LED Serial Control Circuit Evaluation",
+  "description": "Automatic evaluation criteria for LED serial control circuit implementation",
   "version": "2.0",
   "passingThreshold": 85,
   "evaluationCriteria": {
@@ -11,48 +11,50 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "9"
+            "pin": "13"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "en12"
+            "component": "resistor",
+            "terminal": "p1"
           }
         },
         {
           "from": {
-            "component": "arduino",
-            "pin": "8"
+            "component": "resistor",
+            "terminal": "p2"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "in1"
+            "component": "led",
+            "terminal": "A"
           }
         },
         {
           "from": {
-            "component": "arduino",
-            "pin": "7"
+            "component": "led",
+            "terminal": "K"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "in2"
+            "component": "arduino",
+            "pin": "gnd_1"
           }
         }
       ]
     },
     "codeFunctionality": {
       "weight": 0.37,
-      "description": "Arduino code that implements required functionality",
+      "description": "Arduino code that reads serial commands and controls LED",
       "requiredFunctions": [
         "pinMode",
-        "Serial.begin",
-        "analogWrite",
         "digitalWrite",
-        "delay"
+        "Serial.begin",
+        "Serial.read",
+        "Serial.available"
       ],
       "expectedBehavior": {
-        "pinMode": "OUTPUT/INPUT",
-        "pattern": "DC Motor L293D"
+        "pinMode": "OUTPUT",
+        "pinNumber": 13,
+        "command": "ON/OFF via Serial",
+        "baudRate": 9600
       }
     },
     "components": {
@@ -64,11 +66,11 @@
           "count": 1
         },
         {
-          "type": "l293d",
+          "type": "led",
           "count": 1
         },
         {
-          "type": "dc-motor",
+          "type": "resistor",
           "count": 1
         }
       ]
@@ -78,14 +80,8 @@
     {
       "id": "circuit-layout",
       "name": "Correct Circuit Layout",
-      "filename": "dc-motor-l293d-circuit.png",
+      "filename": "circuit.png",
       "description": "Expected component placement and wiring"
-    },
-    {
-      "id": "simulation-result",
-      "name": "Working Simulation",
-      "filename": "dc-motor-l293d-simulation.png",
-      "description": "Expected simulation output"
     }
   ],
   "scoring": {
@@ -106,7 +102,7 @@
     "codeFunctionality": {
       "excellent": {
         "min": 90,
-        "feedback": "Code works perfectly!"
+        "feedback": "Code correctly reads Serial commands and controls LED!"
       },
       "good": {
         "min": 75,

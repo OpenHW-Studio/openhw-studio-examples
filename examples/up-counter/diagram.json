@@ -1,0 +1,294 @@
+{
+  "board": "openhw-arduino-uno",
+  "components": [
+    {
+      "id": "uno1",
+      "type": "openhw-arduino-uno",
+      "label": "Arduino Uno",
+      "x": 15.300000000000011,
+      "y": 15.5,
+      "w": 425,
+      "h": 320,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "led_1",
+      "type": "openhw-led",
+      "label": "LED",
+      "x": 214.2,
+      "y": -447.4,
+      "w": 65.3,
+      "h": 65.3,
+      "rotation": 0,
+      "attrs": {
+        "color": "red",
+        "breadboard": {
+          "anchorPin": "A"
+        },
+        "targetBoard": "uno1"
+      }
+    },
+    {
+      "id": "via_A_led_1_0",
+      "type": "openhw-resistor",
+      "label": "Resistor",
+      "x": 300,
+      "y": -157.5,
+      "w": 70,
+      "h": 32,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "led_2",
+      "type": "openhw-led",
+      "label": "LED",
+      "x": 289.2,
+      "y": -462.40000000000003,
+      "w": 65.3,
+      "h": 65.3,
+      "rotation": 0,
+      "attrs": {
+        "color": "red",
+        "breadboard": {
+          "anchorPin": "A"
+        },
+        "targetBoard": "uno1"
+      }
+    },
+    {
+      "id": "led_3",
+      "type": "openhw-led",
+      "label": "LED",
+      "x": 364.2,
+      "y": -447.4,
+      "w": 65.3,
+      "h": 65.3,
+      "rotation": 0,
+      "attrs": {
+        "color": "red",
+        "breadboard": {
+          "anchorPin": "A"
+        },
+        "targetBoard": "uno1"
+      }
+    },
+    {
+      "id": "led_4",
+      "type": "openhw-led",
+      "label": "LED",
+      "x": 439.2,
+      "y": -462.4,
+      "w": 65.3,
+      "h": 65.3,
+      "rotation": 0,
+      "attrs": {
+        "color": "red",
+        "breadboard": {
+          "anchorPin": "A"
+        },
+        "targetBoard": "uno1"
+      }
+    },
+    {
+      "id": "via_A_led_2_0",
+      "type": "openhw-resistor",
+      "label": "Resistor",
+      "x": 304.20001220703125,
+      "y": -162.39999389648438,
+      "w": 70,
+      "h": 32,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "via_A_led_3_0",
+      "type": "openhw-resistor",
+      "label": "Resistor",
+      "x": 300,
+      "y": -157.5,
+      "w": 70,
+      "h": 32,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "via_A_led_4_0",
+      "type": "openhw-resistor",
+      "label": "Resistor",
+      "x": 300,
+      "y": -157.5,
+      "w": 70,
+      "h": 32,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "w_via_in_led_1_0",
+      "from": "led_1:A",
+      "to": "via_A_led_1_0:p1",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "A",
+      "toLabel": "p1"
+    },
+    {
+      "id": "w_via_out_led_1_0",
+      "from": "via_A_led_1_0:p2",
+      "to": "uno1:13",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "p2",
+      "toLabel": "13"
+    },
+    {
+      "id": "w_auto_led_1_1",
+      "from": "led_1:K",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "K",
+      "toLabel": "GND"
+    },
+    {
+      "id": "w_via_in_led_2_0",
+      "from": "led_2:A",
+      "to": "via_A_led_2_0:p1",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "A",
+      "toLabel": "p1"
+    },
+    {
+      "id": "w_via_out_led_2_0",
+      "from": "via_A_led_2_0:p2",
+      "to": "uno1:12",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "p2",
+      "toLabel": "12"
+    },
+    {
+      "id": "w_auto_led_2_1",
+      "from": "led_2:K",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "K",
+      "toLabel": "GND"
+    },
+    {
+      "id": "w_via_in_led_3_0",
+      "from": "led_3:A",
+      "to": "via_A_led_3_0:p1",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "A",
+      "toLabel": "p1"
+    },
+    {
+      "id": "w_via_out_led_3_0",
+      "from": "via_A_led_3_0:p2",
+      "to": "uno1:11",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "p2",
+      "toLabel": "11"
+    },
+    {
+      "id": "w_auto_led_3_1",
+      "from": "led_3:K",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "K",
+      "toLabel": "GND"
+    },
+    {
+      "id": "w_via_in_led_4_0",
+      "from": "led_4:A",
+      "to": "via_A_led_4_0:p1",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "A",
+      "toLabel": "p1"
+    },
+    {
+      "id": "w_via_out_led_4_0",
+      "from": "via_A_led_4_0:p2",
+      "to": "uno1:10",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "p2",
+      "toLabel": "10"
+    },
+    {
+      "id": "w_auto_led_4_1",
+      "from": "led_4:K",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "K",
+      "toLabel": "GND"
+    }
+  ]
+}

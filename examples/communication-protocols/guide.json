@@ -1,0 +1,10 @@
+{
+  "title": "Communication Protocols - I2C, SPI, UART",
+  "board": "Arduino Uno",
+  "description": "Learn about I2C communication by interfacing an LCD 16x2 I2C module with Arduino.",
+  "objectives": [
+    "Understand I2C communication protocol",
+    "Interface an LCD 16x2 I2C module with Arduino",
+    "Use Wire and LiquidCrystal_I2C libraries"
+  ]
+}

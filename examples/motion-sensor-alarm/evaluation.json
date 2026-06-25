@@ -11,7 +11,7 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "2"
+            "pin": "13"
           },
           "to": {
             "component": "pir",
@@ -21,7 +21,7 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "13"
+            "pin": "8"
           },
           "to": {
             "component": "led",
@@ -46,8 +46,10 @@
       "requiredFunctions": [
         "pinMode",
         "Serial.begin",
+        "digitalRead",
         "digitalWrite",
         "tone",
+        "noTone",
         "delay"
       ],
       "expectedBehavior": {

@@ -1,0 +1,10 @@
+{
+  "title": "Control RGB LED with Serial Monitor",
+  "board": "Arduino Uno",
+  "description": "Control an RGB LED by sending color commands (red, green, blue, etc.) through the Serial Monitor.",
+  "objectives": [
+    "Drive RGB LED channels from separate PWM output pins",
+    "Use Serial.readString to parse text commands",
+    "Control multiple output pins based on string input"
+  ]
+}

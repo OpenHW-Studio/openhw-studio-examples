@@ -1,0 +1,10 @@
+{
+  "title": "7-Segment Display",
+  "board": "Arduino Uno",
+  "description": "Control a 7-segment display to show numeric digits 0-9.",
+  "objectives": [
+    "Connect a 7-segment display to Arduino digital pins",
+    "Understand common cathode vs common anode wiring",
+    "Use bit patterns to display numeric digits"
+  ]
+}

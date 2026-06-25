@@ -11,11 +11,31 @@
         {
           "from": {
             "component": "arduino",
+            "pin": "8"
+          },
+          "to": {
+            "component": "a4988",
+            "terminal": "step"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
             "pin": "9"
           },
           "to": {
-            "component": "motor-driver",
-            "terminal": "pwm"
+            "component": "a4988",
+            "terminal": "dir"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
+            "pin": "10"
+          },
+          "to": {
+            "component": "a4988",
+            "terminal": "enable"
           }
         },
         {
@@ -24,8 +44,8 @@
             "pin": "a0"
           },
           "to": {
-            "component": "tmp36",
-            "terminal": "vout"
+            "component": "ntc",
+            "terminal": "out"
           }
         }
       ]
@@ -36,14 +56,13 @@
       "requiredFunctions": [
         "pinMode",
         "Serial.begin",
-        "analogWrite",
         "analogRead",
-        "map",
-        "delay"
+        "digitalWrite",
+        "AccelStepper"
       ],
       "expectedBehavior": {
         "pinMode": "OUTPUT/INPUT",
-        "pattern": "Automatic Fan Speed Control"
+        "pattern": "Auto Fan Speed"
       }
     },
     "components": {
@@ -55,15 +74,15 @@
           "count": 1
         },
         {
-          "type": "tmp36",
+          "type": "ntc-temperature-sensor",
           "count": 1
         },
         {
-          "type": "dc-motor",
+          "type": "stepper-motor",
           "count": 1
         },
         {
-          "type": "l293d",
+          "type": "a4988",
           "count": 1
         }
       ]
