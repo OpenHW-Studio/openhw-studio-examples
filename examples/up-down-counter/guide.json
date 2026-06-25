@@ -1,0 +1,10 @@
+{
+  "title": "Up-Down Counter",
+  "board": "Arduino Uno",
+  "description": "Push-button up/down counter — press UP to increment, DOWN to decrement.",
+  "objectives": [
+    "Read push-button inputs with internal pull-up resistors",
+    "Implement a counter that increments and decrements",
+    "Display count value on Serial Monitor"
+  ]
+}

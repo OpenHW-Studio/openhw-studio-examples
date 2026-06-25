@@ -1,0 +1,10 @@
+{
+  "title": "LED Control with Serial Monitor",
+  "board": "Arduino Uno",
+  "description": "Control an LED by sending commands through the Serial Monitor.",
+  "objectives": [
+    "Initialize Serial communication in Arduino",
+    "Read user input from Serial Monitor",
+    "Control LED state based on serial commands"
+  ]
+}

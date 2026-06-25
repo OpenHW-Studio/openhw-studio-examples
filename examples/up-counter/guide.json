@@ -1,0 +1,10 @@
+{
+  "title": "Up Counter",
+  "board": "Arduino Uno",
+  "description": "Create an up counter using 4 LEDs to display the binary count.",
+  "objectives": [
+    "Use multiple LEDs to represent binary numbers",
+    "Implement a counter that increments every second",
+    "Understand binary number representation with LEDs"
+  ]
+}

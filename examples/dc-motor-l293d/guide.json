@@ -3,8 +3,9 @@
   "board": "Arduino Uno",
   "description": "Control DC motor direction and speed using L293D H-bridge.",
   "objectives": [
-    "Understand H-bridge motor driver",
-    "Control motor direction with digital pins",
-    "Control motor speed with PWM"
+    "Wire L293D channel 1: EN1,2→D9, IN1→D8, IN2→D7",
+    "Connect DC motor to OUT1 and OUT2",
+    "Control direction via IN1/IN2 (HIGH/LOW)",
+    "Control speed via PWM on EN pin"
   ]
 }

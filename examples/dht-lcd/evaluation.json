@@ -1,6 +1,6 @@
 {
-  "title": "DC Motor with Motor Driver (L293D) Circuit Evaluation",
-  "description": "Automatic evaluation criteria for dc motor with motor driver (l293d) circuit implementation",
+  "title": "DHT22 Sensor on LCD Circuit Evaluation",
+  "description": "Automatic evaluation criteria for DHT22 temperature and humidity sensor with LCD display",
   "version": "2.0",
   "passingThreshold": 85,
   "evaluationCriteria": {
@@ -11,31 +11,91 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "9"
+            "pin": "6"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "en12"
+            "component": "dht22",
+            "terminal": "data"
+          }
+        },
+        {
+          "from": {
+            "component": "resistor",
+            "terminal": "p1"
+          },
+          "to": {
+            "component": "dht22",
+            "terminal": "data"
+          }
+        },
+        {
+          "from": {
+            "component": "resistor",
+            "terminal": "p2"
+          },
+          "to": {
+            "component": "arduino",
+            "pin": "5v"
           }
         },
         {
           "from": {
             "component": "arduino",
-            "pin": "8"
+            "pin": "12"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "in1"
+            "component": "lcd",
+            "terminal": "rs"
           }
         },
         {
           "from": {
             "component": "arduino",
-            "pin": "7"
+            "pin": "11"
           },
           "to": {
-            "component": "l293d",
-            "terminal": "in2"
+            "component": "lcd",
+            "terminal": "e"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
+            "pin": "5"
+          },
+          "to": {
+            "component": "lcd",
+            "terminal": "d4"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
+            "pin": "4"
+          },
+          "to": {
+            "component": "lcd",
+            "terminal": "d5"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
+            "pin": "3"
+          },
+          "to": {
+            "component": "lcd",
+            "terminal": "d6"
+          }
+        },
+        {
+          "from": {
+            "component": "arduino",
+            "pin": "2"
+          },
+          "to": {
+            "component": "lcd",
+            "terminal": "d7"
           }
         }
       ]
@@ -44,15 +104,17 @@
       "weight": 0.37,
       "description": "Arduino code that implements required functionality",
       "requiredFunctions": [
-        "pinMode",
-        "Serial.begin",
-        "analogWrite",
-        "digitalWrite",
+        "LiquidCrystal",
+        "DHT",
+        "begin",
+        "readTemperature",
+        "readHumidity",
+        "setCursor",
+        "print",
         "delay"
       ],
       "expectedBehavior": {
-        "pinMode": "OUTPUT/INPUT",
-        "pattern": "DC Motor L293D"
+        "pattern": "DHT22 Sensor on LCD"
       }
     },
     "components": {
@@ -64,11 +126,15 @@
           "count": 1
         },
         {
-          "type": "l293d",
+          "type": "dht22",
           "count": 1
         },
         {
-          "type": "dc-motor",
+          "type": "lcd1602",
+          "count": 1
+        },
+        {
+          "type": "resistor",
           "count": 1
         }
       ]
@@ -78,13 +144,13 @@
     {
       "id": "circuit-layout",
       "name": "Correct Circuit Layout",
-      "filename": "dc-motor-l293d-circuit.png",
+      "filename": "circuit.png",
       "description": "Expected component placement and wiring"
     },
     {
       "id": "simulation-result",
       "name": "Working Simulation",
-      "filename": "dc-motor-l293d-simulation.png",
+      "filename": "dht-lcd-simulation.png",
       "description": "Expected simulation output"
     }
   ],

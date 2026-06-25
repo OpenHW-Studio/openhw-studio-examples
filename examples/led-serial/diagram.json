@@ -1,0 +1,83 @@
+{
+  "board": "openhw-arduino-uno",
+  "components": [
+    {
+      "id": "uno",
+      "type": "openhw-arduino-uno",
+      "label": "Arduino Uno",
+      "x": 147,
+      "y": 129,
+      "w": 311,
+      "h": 228,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "led1",
+      "type": "openhw-led",
+      "label": "LED",
+      "x": 598,
+      "y": 108,
+      "w": 38,
+      "h": 38,
+      "rotation": 0,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "openhw-resistor",
+      "label": "Resistor",
+      "x": 447,
+      "y": 123,
+      "w": 60,
+      "h": 12,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "w1",
+      "from": "uno:13",
+      "to": "r1:p1",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "13",
+      "toLabel": "p1"
+    },
+    {
+      "id": "w2",
+      "from": "r1:p2",
+      "to": "led1:A",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "p2",
+      "toLabel": "A"
+    },
+    {
+      "id": "w3",
+      "from": "led1:K",
+      "to": "uno:gnd_1",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "K",
+      "toLabel": "gnd_1"
+    }
+  ]
+}

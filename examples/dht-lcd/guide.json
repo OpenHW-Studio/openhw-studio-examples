@@ -1,0 +1,11 @@
+{
+  "title": "DHT22 Sensor on LCD",
+  "board": "Arduino Uno",
+  "description": "Read temperature and humidity from DHT22 sensor and display on 16x2 LCD.",
+  "objectives": [
+    "Use DHT sensor library to read temperature and humidity",
+    "Use LiquidCrystal library to control 16x2 LCD in 4-bit mode",
+    "Display sensor data on LCD and Serial Monitor",
+    "Add a 10kΩ pull-up resistor between DHT22 DATA and 5V"
+  ]
+}

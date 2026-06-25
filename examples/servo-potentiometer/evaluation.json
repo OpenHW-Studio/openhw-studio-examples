@@ -11,7 +11,7 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "9"
+            "pin": "6"
           },
           "to": {
             "component": "servo",
@@ -21,7 +21,7 @@
         {
           "from": {
             "component": "arduino",
-            "pin": "5v"
+            "pin": "3v3"
           },
           "to": {
             "component": "potentiometer",

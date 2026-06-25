@@ -1,0 +1,92 @@
+{
+  "board": "openhw-arduino-uno",
+  "components": [
+    {
+      "id": "uno1",
+      "type": "openhw-arduino-uno",
+      "label": "Arduino Uno",
+      "x": -200,
+      "y": -280,
+      "w": 425,
+      "h": 320,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "btn_1",
+      "type": "openhw-pushbutton",
+      "label": "Up Button",
+      "x": 420,
+      "y": -105,
+      "w": 50,
+      "h": 50,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "btn_2",
+      "type": "openhw-pushbutton",
+      "label": "Down Button",
+      "x": 420,
+      "y": -15,
+      "w": 50,
+      "h": 50,
+      "rotation": 0,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    {
+      "id": "w_up_gnd",
+      "from": "btn_1:1l",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "1l",
+      "toLabel": "GND"
+    },
+    {
+      "id": "w_up_sig",
+      "from": "btn_1:2l",
+      "to": "uno1:2",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "2l",
+      "toLabel": "2"
+    },
+    {
+      "id": "w_down_gnd",
+      "from": "btn_2:1l",
+      "to": "uno1:GND",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "1l",
+      "toLabel": "GND"
+    },
+    {
+      "id": "w_down_sig",
+      "from": "btn_2:2l",
+      "to": "uno1:3",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false,
+      "fromLabel": "2l",
+      "toLabel": "3"
+    }
+  ]
+}

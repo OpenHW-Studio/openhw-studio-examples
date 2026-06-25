@@ -1,0 +1,150 @@
+{
+  "title": "7-Segment Display Counter Evaluation",
+  "description": "Evaluate 7-segment display circuit wiring and counter code.",
+  "version": "2.0",
+  "passingThreshold": 75,
+  "evaluationCriteria": {
+    "wiring": {
+      "weight": 0.3,
+      "description": "Correct circuit wiring for 7-segment display with resistors",
+      "checks": [
+        {
+          "description": "Segment A through resistor to pin 2",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:a",
+          "to": "uno1:2"
+        },
+        {
+          "description": "Segment B through resistor to pin 3",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:b",
+          "to": "uno1:3"
+        },
+        {
+          "description": "Segment C through resistor to pin 4",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:c",
+          "to": "uno1:4"
+        },
+        {
+          "description": "Segment D through resistor to pin 5",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:d",
+          "to": "uno1:5"
+        },
+        {
+          "description": "Segment E through resistor to pin 6",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:e",
+          "to": "uno1:6"
+        },
+        {
+          "description": "Segment F through resistor to pin 7",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:f",
+          "to": "uno1:7"
+        },
+        {
+          "description": "Segment G through resistor to pin 8",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:g",
+          "to": "uno1:8"
+        },
+        {
+          "description": "Decimal point through resistor to pin 9",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:dp",
+          "to": "uno1:9"
+        },
+        {
+          "description": "Common cathode connected to GND",
+          "required": true,
+          "type": "connection",
+          "from": "7seg_1:com",
+          "to": "uno1:GND"
+        }
+      ]
+    },
+    "codeFunctionality": {
+      "weight": 0.5,
+      "description": "Arduino code that displays a running counter on 7-segment display",
+      "requiredFunctions": [
+        "pinMode",
+        "digitalWrite",
+        "bitRead",
+        "Serial.println"
+      ],
+      "checks": [
+        {
+          "description": "Segment pins 2-9 configured as OUTPUT",
+          "required": true,
+          "type": "code",
+          "pattern": "pinMode\\s*\\(\\s*(2|3|4|5|6|7|8|9)\\s*,\\s*OUTPUT\\s*\\)"
+        },
+        {
+          "description": "Uses Serial to print count",
+          "required": true,
+          "type": "code",
+          "pattern": "Serial\\.print(ln)?\\s*\\(.*[Cc]ount"
+        },
+        {
+          "description": "Uses digitalWrite to control segments",
+          "required": true,
+          "type": "code",
+          "pattern": "digitalWrite"
+        }
+      ]
+    },
+    "components": {
+      "weight": 0.2,
+      "description": "Required components for the circuit",
+      "required": [
+        {
+          "type": "arduino",
+          "count": 1
+        },
+        {
+          "type": "7segment",
+          "count": 1
+        },
+        {
+          "type": "resistor",
+          "count": 8
+        }
+      ]
+    }
+  },
+  "demoImages": [
+    {
+      "id": "circuit-layout",
+      "name": "Circuit Layout",
+      "filename": "circuit.png",
+      "description": "Expected component placement and wiring"
+    }
+  ],
+  "scoring": {
+    "wiring": {
+      "excellent": { "min": 90, "feedback": "All wiring connections are correct." },
+      "good": { "min": 75, "feedback": "Most wiring connections are correct." },
+      "needsImprovement": { "min": 0, "feedback": "Missing or incorrect wiring connections." }
+    },
+    "codeFunctionality": {
+      "excellent": { "min": 90, "feedback": "Code displays counter correctly on the 7-segment display." },
+      "good": { "min": 75, "feedback": "Code works with minor issues." },
+      "needsImprovement": { "min": 0, "feedback": "Code needs significant improvement." }
+    },
+    "components": {
+      "excellent": { "min": 90, "feedback": "All required components are present!" },
+      "good": { "min": 75, "feedback": "Most required components are present." },
+      "needsImprovement": { "min": 0, "feedback": "Missing one or more required components." }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Communication Protocols Circuit Evaluation",
+  "description": "Automatic evaluation criteria for I2C LCD communication circuit",
+  "version": "2.0",
+  "passingThreshold": 85,
+  "evaluationCriteria": {
+    "wiringAccuracy": {
+      "weight": 0.43,
+      "description": "Correct I2C connections for the LCD module",
+      "requiredConnections": [
+        { "from": { "component": "lcd", "pin": "GND" }, "to": { "component": "arduino", "pin": "GND" } },
+        { "from": { "component": "lcd", "pin": "VCC" }, "to": { "component": "arduino", "pin": "5V" } },
+        { "from": { "component": "lcd", "pin": "SDA" }, "to": { "component": "arduino", "pin": "A4" } },
+        { "from": { "component": "lcd", "pin": "SCL" }, "to": { "component": "arduino", "pin": "A5" } },
+        { "from": { "component": "lcd", "pin": "SDA" }, "to": { "component": "resistor", "terminal": "p1" } },
+        { "from": { "component": "resistor", "terminal": "p2" }, "to": { "component": "arduino", "pin": "3V3" } },
+        { "from": { "component": "lcd", "pin": "SCL" }, "to": { "component": "resistor", "terminal": "p1" } },
+        { "from": { "component": "resistor", "terminal": "p2" }, "to": { "component": "arduino", "pin": "3V3" } }
+      ]
+    },
+    "codeFunctionality": {
+      "weight": 0.37,
+      "description": "Arduino code that initializes and displays text on I2C LCD",
+      "requiredFunctions": ["Wire.begin", "lcd.init", "lcd.backlight", "lcd.print"],
+      "expectedBehavior": {
+        "i2cAddress": "0x27",
+        "display": "text on LCD via I2C",
+        "baudRate": 9600
+      }
+    },
+    "components": {
+      "weight": 0.2,
+      "description": "Required components for the circuit",
+      "required": [
+        { "type": "arduino", "count": 1 },
+        { "type": "lcd", "count": 1 },
+        { "type": "resistor", "count": 2 }
+      ]
+    }
+  },
+  "demoImages": [
+    {
+      "id": "circuit-layout",
+      "name": "Correct Circuit Layout",
+      "filename": "circuit.png",
+      "description": "Expected I2C LCD wiring with pull-up resistors"
+    }
+  ],
+  "scoring": {
+    "wiringAccuracy": {
+      "excellent": { "min": 90, "feedback": "All I2C connections are correct!" },
+      "good": { "min": 75, "feedback": "Most connections are correct with minor issues" },
+      "needsImprovement": { "min": 0, "feedback": "I2C wiring needs significant correction" }
+    },
+    "codeFunctionality": {
+      "excellent": { "min": 90, "feedback": "LCD display and I2C communication works perfectly!" },
+      "good": { "min": 75, "feedback": "I2C communication works but may need minor improvements" },
+      "needsImprovement": { "min": 0, "feedback": "I2C communication needs significant work" }
+    },
+    "components": {
+      "excellent": { "min": 90, "feedback": "All required components are present!" },
+      "good": { "min": 75, "feedback": "Most required components are present." },
+      "needsImprovement": { "min": 0, "feedback": "Missing one or more required components." }
+    }
+  }
+}

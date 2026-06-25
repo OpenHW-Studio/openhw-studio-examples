@@ -1,0 +1,11 @@
+{
+  "title": "7-Segment Display Counter",
+  "board": "Arduino Uno",
+  "description": "Display a running counter from 0 to 9 on a 7-segment display, incrementing every second.",
+  "objectives": [
+    "Connect a 7-segment display with current-limiting resistors",
+    "Drive individual segments using digital output pins",
+    "Encode decimal digits as 7-segment patterns",
+    "Display a running count on the serial monitor"
+  ]
+}

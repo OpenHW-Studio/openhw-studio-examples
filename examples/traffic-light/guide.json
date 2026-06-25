@@ -1,0 +1,10 @@
+{
+  "title": "Traffic Light System",
+  "board": "Arduino Uno",
+  "description": "Simulate a traffic light system with red, yellow, and green LEDs.",
+  "objectives": [
+    "Control multiple LEDs as a traffic light sequence",
+    "Implement timing logic for RED, YELLOW, and GREEN phases",
+    "Build a visual traffic light simulation"
+  ]
+}

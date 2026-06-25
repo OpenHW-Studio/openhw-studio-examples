@@ -1,0 +1,62 @@
+{
+  "title": "Up-Down Counter Circuit Evaluation",
+  "description": "Automatic evaluation criteria for up-down counter circuit",
+  "version": "2.0",
+  "passingThreshold": 85,
+  "evaluationCriteria": {
+    "wiringAccuracy": {
+      "weight": 0.43,
+      "description": "Correct connections for push buttons",
+      "requiredConnections": [
+        { "from": { "component": "pushbutton", "terminal": "1l" }, "to": { "component": "arduino", "pin": "GND" } },
+        { "from": { "component": "pushbutton", "terminal": "2l" }, "to": { "component": "arduino", "pin": "2" } },
+        { "from": { "component": "pushbutton", "terminal": "1l" }, "to": { "component": "arduino", "pin": "GND" } },
+        { "from": { "component": "pushbutton", "terminal": "2l" }, "to": { "component": "arduino", "pin": "3" } }
+      ]
+    },
+    "codeFunctionality": {
+      "weight": 0.37,
+      "description": "Arduino code that reads button presses and updates count",
+      "requiredFunctions": ["pinMode", "digitalRead", "Serial.begin", "Serial.println"],
+      "expectedBehavior": {
+        "pinMode": "INPUT_PULLUP",
+        "upPin": 2,
+        "downPin": 3,
+        "action": "increment/decrement on button press"
+      }
+    },
+    "components": {
+      "weight": 0.2,
+      "description": "Required components for the circuit",
+      "required": [
+        { "type": "arduino", "count": 1 },
+        { "type": "pushbutton", "count": 2 }
+      ]
+    }
+  },
+  "demoImages": [
+    {
+      "id": "circuit-layout",
+      "name": "Correct Circuit Layout",
+      "filename": "circuit.png",
+      "description": "Expected up-down button wiring"
+    }
+  ],
+  "scoring": {
+    "wiringAccuracy": {
+      "excellent": { "min": 90, "feedback": "All button connections are correct!" },
+      "good": { "min": 75, "feedback": "Most connections are correct with minor issues" },
+      "needsImprovement": { "min": 0, "feedback": "Button wiring needs significant correction" }
+    },
+    "codeFunctionality": {
+      "excellent": { "min": 90, "feedback": "Up-Down counter works perfectly!" },
+      "good": { "min": 75, "feedback": "Counter works but may need minor improvements" },
+      "needsImprovement": { "min": 0, "feedback": "Counter code needs significant work" }
+    },
+    "components": {
+      "excellent": { "min": 90, "feedback": "All required components are present!" },
+      "good": { "min": 75, "feedback": "Most required components are present." },
+      "needsImprovement": { "min": 0, "feedback": "Missing one or more required components." }
+    }
+  }
+}
